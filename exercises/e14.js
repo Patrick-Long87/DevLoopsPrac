@@ -6,7 +6,32 @@
 // getClientsWithWrongBalance(bankAccounts) => [{ name: 'Name1', balance: 32, ... }, { name: 'Name2', balance: 3523, ... }]
 
 export function getClientsWithWrongBalance(array) {
-  // Your code goes here...
+  let accounts = [];
+  array.forEach(element => {
+    let balance = 0;
+    let tempBalance = 0;
+    let depositsTotal = 0;
+    let withdrawalsTotal = 0;
+    balance = element.balance;
+    if(element.deposits){
+      element.deposits.forEach(item => {
+        depositsTotal = depositsTotal + item
+      })
+    }
+    if(element.withdrawals){
+      element.withdrawals.forEach(item => {
+        withdrawalsTotal = withdrawalsTotal + item
+      })
+    }
+    
+    tempBalance = depositsTotal - withdrawalsTotal;
+    
+    if(tempBalance != balance){
+      accounts.push(element)
+    }
+  });
+
+  return accounts;
 
 }
 

@@ -25,3 +25,4 @@ export const flatArraysData = [
 ];
 
 export const joinToStringData = ['Devslopes', 'is', 'teaching', 'me', 'FOR', 'loops', 'and', 'functions', '!'];
+

@@ -6,8 +6,13 @@
 // NOTE: You can NOT use the array.includes() method in your code
 
 export function doesArrayInclude(array, value) {
-  // Your code goes here...
-
+  let status = false
+  array.forEach(element => {
+    if(element == value){
+      status =  true
+    }
+  });
+  return status
 }
 
 

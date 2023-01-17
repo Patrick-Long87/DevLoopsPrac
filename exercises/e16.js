@@ -6,7 +6,17 @@
 // NOTE: You can NOT use the array.flat() method in your code
 
 export function flatArrays(array) {
-  // Your code goes here...
+  let newArr = [];
+  array.forEach(element => {
+    if(Array.isArray(element)){
+      element.forEach(item=>{
+        newArr.push(item)
+      })
+    }else{
+      newArr.push(element)
+    }
+  });
+  return newArr;
 
 }
 

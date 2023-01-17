@@ -6,7 +6,20 @@
 // NOTE: You can NOT use the array.join(), array.toString(), and array.replace() methods in your code
 
 export function joinToString(array, separator) {
-  // Your code goes here...
+  let newString = '';
+  let puncArr = ['!','@','#','$','%','^','&','*','(',')',',','.'];
+  let editedString = '';
+  for (let i = 0; i < array.length; i++) {
+    if(array[i] == array.length - 1 || puncArr.includes(array[i+1])){
+      newString += array[i]
+    }else{
+      newString += array[i] + separator
+    }
+    
+    
+  }
+  editedString = newString.slice(0, -1)
+  return editedString;
 
 }
 
